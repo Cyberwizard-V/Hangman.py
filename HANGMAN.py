@@ -142,19 +142,19 @@ def clearConsole():
 
 #Functie voor degene die het woord kiest
 def kiesWoord():
-    print("Woordkiezer, Kies een woord: ")
+    print("Wordchooser, Choose a word: ")
     woordKiezer = input().upper()
     woord = list(woordKiezer)
     return woord
 
 #We maken er een list van en zetten de game op true met een fouten op 0
 
-print("Welkom bij galgje !")
+print("Welcome to hangman !")
 time.sleep(0.5)
 print("--------------------")
-print("Je hebt max 10 fouten")
+print("Max mistakes you can make is 10")
 time.sleep(0.5)
-print("Let op: er is een woordkiezer en een woordrader !")
+print("Attention ! : There is a word chooser and a word guesser !")
 woord = list(kiesWoord())
 
 clearConsole()
@@ -169,19 +169,19 @@ for i in range(len(woord)):
 #Galgje MAIN
 while game and fout < 10:
     print(leegwoord)
-    print("Kies een letter :")
+    print("Choose a letter :")
     letter = input().upper()
     char = letter
     if letter in woord:
         goed += 1
-        print("Je hebt " + str(goed) + " goed!")
+        print("You have " + str(goed) + " points !")
         for index, letter in enumerate(woord):
             if letter == char:
                 leegwoord[index] = letter
         if leegwoord == woord:
-            print("Gefeliciteerd, je hebt de game gewonnen !")
+            print("congratulations, you won the game !")
             game = False
     else:
         fout += 1
-        print("FOUT ! Je hebt " + str(fout) + " fouten .")
+        print("MISTAKE : You have " + str(fout) + " mistakes .")
         print(HANGMAN[fout])
