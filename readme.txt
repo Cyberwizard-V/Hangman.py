@@ -7,4 +7,4 @@
 ---------------------------CHANGES---------------------------
 
 - Language was Dutch
-+ Changed to English. ( V.1.01 )
++ Changed to English. ( V.1.0.1 )
